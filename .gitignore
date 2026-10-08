@@ -1,0 +1,30 @@
+# The only .gitignore in this repo — don't add per-project ones.
+
+# Lecture recordings (~1.4 GB) — keep locally, never commit
+01-lectures/*
+!01-lectures/README.md
+
+# Dependencies (reinstall with npm install / uv sync)
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[oc]
+.ipynb_checkpoints/
+
+# Build output
+dist/
+build/
+*.egg-info/
+
+# Secrets — commit a .env.example instead
+.env
+.env.*
+!.env.example
+
+# Editor / OS / tool noise
+.DS_Store
+.vscode/
+.idea/
+.qodo/
+*.log

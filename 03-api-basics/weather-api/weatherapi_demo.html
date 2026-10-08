@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Weather API Demo</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style type="text/tailwindcss">
+      @layer components {
+        /* Layout & Containers */
+        .card {
+          @apply bg-white p-6 rounded-2xl border border-slate-200 shadow-sm;
+        }
+        .header-section {
+          @apply mb-8 text-center;
+        }
+
+        /* Typography */
+        .label {
+          @apply text-xs font-semibold uppercase tracking-wider text-slate-400 mb-1;
+        }
+        .stat-val {
+          @apply text-lg font-bold text-slate-700;
+        }
+        .badge {
+          @apply px-2 py-1 rounded-md text-xs font-bold uppercase;
+        }
+
+        /* Inputs & Buttons */
+        .search-input {
+          @apply px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-blue-500 outline-none w-full sm:w-64;
+        }
+        .btn-primary {
+          @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition shadow-md;
+        }
+
+        /* Weather Specifics */
+        .weather-img {
+          @apply w-16 h-16 mr-4 bg-blue-50 rounded-full;
+        }
+        .blue-card {
+          @apply card bg-blue-600 border-none;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="bg-slate-50 min-h-screen p-4 md:p-8">
+    <div class="max-w-4xl mx-auto">
+      <header class="header-section">
+        <h1 class="text-3xl font-bold text-slate-800 mb-4">Weather API Fetch Demo</h1>
+        <div class="flex flex-col sm:flex-row gap-2 justify-center">
+          <input type="text" id="cityInput" placeholder="Enter city (e.g. London, Tokyo...)"
+                class="search-input">
+          <button onclick="getWeather()"
+                  class="btn-primary">
+            Fetch Weather
+          </button>
+        </div>
+        <p id="errorMessage" class="text-red-500 mt-4 hidden text-sm font-medium"></p>
+      </header>
+
+      <main id="weatherDashboard" class="hidden space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="card md:col-span-2 flex items-center justify-between">
+            <div>
+              <h2 id="cityName" class="text-2xl font-black text-slate-800">--</h2>
+              <p id="localTime" class="text-sm text-slate-400 italic">--</p>
+              <div class="flex items-center mt-4">
+                <img id="weatherIcon" src="" alt="" class="weather-img">
+                <div>
+                  <span id="tempC" class="text-4xl font-bold text-slate-800">--</span><span class="text-2xl text-slate-400">°C</span>
+                  <p id="conditionText" class="text-blue-600 font-semibold tracking-wide">--</p>
+                </div>
+              </div>
+            </div>
+            <div class="text-right">
+              <div id="dayNightBadge" class="badge bg-slate-100 text-slate-500 mb-2 inline-block">--</div>
+              <p class="label">Feels Like</p>
+              <p id="feelsLike" class="stat-val">--</p>
+            </div>
+          </div>
+
+          <div class="blue-card">
+            <p class="label text-blue-200">Wind & Humidity</p>
+            <div class="space-y-4 mt-2">
+              <div>
+                <p class="text-blue-100 text-xs">Wind Speed</p>
+                <p id="windSpeed" class="text-white text-xl font-bold">--</p>
+              </div>
+              <div>
+                <p class="text-blue-100 text-xs">Humidity</p>
+                <div class="flex items-center">
+                  <p id="humidity" class="text-white text-xl font-bold">--</p>
+                  <span class="ml-2 text-white font-bold">%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="card">
+            <h3 class="font-bold border-b pb-2 mb-4 text-slate-800">Today's Forecast</h3>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <p class="label">Max / Min Temp</p>
+                <p id="forecastTemp" class="stat-val">--</p>
+              </div>
+              <div>
+                <p class="label">Chance of Rain</p>
+                <p id="rainChance" class="stat-val">--</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 class="font-bold border-b pb-2 mb-4 text-slate-800">Astro Data</h3>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <p class="label">Sunrise</p>
+                <p id="sunrise" class="stat-val">--</p>
+              </div>
+              <div>
+                <p class="label">Sunset</p>
+                <p id="sunset" class="stat-val">--</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+
+    <script>
+      /**
+       * DEVELOPER CONFIG
+       * In a production environment, you would never expose this key.
+       * It would be stored in a .env file and called via a secure Proxy server.
+       */
+      const CONFIG = {
+        API_KEY: '99ed034a582b4b26847223801261704',
+        BASE_URL: 'https://api.weatherapi.com/v1'
+      };
+
+      async function getWeather() {
+        const city = document.getElementById('cityInput').value;
+        const errorEl = document.getElementById('errorMessage');
+        const dashboard = document.getElementById('weatherDashboard');
+
+        if (!city) {
+          showError("Please enter a city name.");
+          return;
+        }
+
+        try {
+          const response = await fetch(`${CONFIG.BASE_URL}/forecast.json?key=${CONFIG.API_KEY}&q=${city}&days=1&aqi=no&alerts=no`);
+
+          if (!response.ok) {
+            throw new Error("City not found or API error.");
+          }
+
+          const data = await response.json();
+          updateUI(data);
+          errorEl.classList.add('hidden');
+          dashboard.classList.remove('hidden');
+
+        } catch (err) {
+          showError(err.message);
+          dashboard.classList.add('hidden');
+        }
+      }
+
+      function updateUI(data) {
+        // Realtime Data (current)
+        document.getElementById('cityName').innerText = `${data.location.name}, ${data.location.country}`;
+        document.getElementById('localTime').innerText = `Last updated: ${data.current.last_updated}`;
+        document.getElementById('tempC').innerText = data.current.temp_c;
+        document.getElementById('conditionText').innerText = data.current.condition.text;
+        document.getElementById('weatherIcon').src = `https:${data.current.condition.icon}`;
+        document.getElementById('feelsLike').innerText = `${data.current.feelslike_c}°C`;
+        document.getElementById('windSpeed').innerText = `${data.current.wind_kph} KPH (${data.current.wind_dir})`;
+        document.getElementById('humidity').innerText = data.current.humidity;
+
+        const badge = document.getElementById('dayNightBadge');
+        badge.innerText = data.current.is_day ? "Daytime" : "Nighttime";
+        badge.className = data.current.is_day ? "badge bg-yellow-100 text-yellow-700" : "badge bg-indigo-100 text-indigo-700";
+
+        // Forecast Data (forecastday[0])
+        const today = data.forecast.forecastday[0];
+        document.getElementById('forecastTemp').innerText = `${today.day.maxtemp_c}° / ${today.day.mintemp_c}°`;
+        document.getElementById('rainChance').innerText = `${today.day.daily_chance_of_rain}%`;
+
+        // Astro Data
+        document.getElementById('sunrise').innerText = today.astro.sunrise;
+        document.getElementById('sunset').innerText = today.astro.sunset;
+      }
+
+      function showError(msg) {
+        const errorEl = document.getElementById('errorMessage');
+        errorEl.innerText = msg;
+        errorEl.classList.remove('hidden');
+      }
+
+      // Trigger on Enter Key
+      document.getElementById('cityInput').addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') getWeather();
+      });
+    </script>
+  </body>
+</html>

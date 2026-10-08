@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "Hardy Strength Progression Report 2026: aggregate data"
+authors:
+  - name: "Hardy"
+    website: "https://hardy.app"
+date-released: 2026-09-03
+version: "2026.1"
+url: "https://hardy.app/strength-report"
+repository-artifact: "https://hardy.app/strength-report-data.csv"
+license: CC-BY-4.0
+doi: "10.5281/zenodo.22311472"
+abstract: "Aggregated, anonymised statistics from 5.8 million sets logged by 10,407 lifters in the Hardy strength training app between March 2021 and September 2026: time to plate milestones by starting strength, estimated 1RM gain after 1 to 24 months, lift percentiles, exercise and muscle-group volume, workout length and frequency, rest, RPE and rep-range distributions. Groups under 50 lifters are suppressed. No bodyweight, age or sex was collected."
+keywords:
+  - strength training
+  - bench press
+  - squat
+  - deadlift
+  - overhead press
+  - one-rep max
+  - longitudinal
+  - fitness app
+  - resistance training

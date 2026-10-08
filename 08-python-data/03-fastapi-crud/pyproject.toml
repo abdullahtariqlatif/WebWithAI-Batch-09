@@ -1,0 +1,20 @@
+[project]
+name = "fast-api-test"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Abdullah Tariq", email = "abdullahtariqbutt01@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi[standard]>=0.141.1",
+    "pandas>=3.0.5",
+]
+
+[project.scripts]
+fast-api-test = "fast_api_test:main"
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"

@@ -1,22 +1,6 @@
-# 08 · Python, Data Analysis, FastAPI
+# 08 · Python & Data
 
-Priority: ★★☆ — Course module 12 (Python side). Don't go deep on syntax; go wide on tools.
-Rails lens: `uv` ≈ Bundler; `pyproject.toml` ≈ Gemfile; Pydantic ≈ strong params + validations.
-
-## Checklist
-- [ ] Python basics: types, collections, functions, classes, exceptions, modules
-- [ ] Tooling: `uv`, venvs, `pyproject.toml`, `.env`
-- [ ] Jupyter + Google Colab
-- [ ] pandas: load, clean, group, merge
-- [ ] Visualization: matplotlib / seaborn
-- [ ] Pydantic: models, validation, nested models, serialization
-- [ ] FastAPI: routes, CRUD, Pydantic schemas, auto docs
-- [ ] Streamlit: inputs, sidebar, charts, session state, file upload, deploy
-
-## Practice
-- [ ] CSV analyzer in Streamlit
-- [ ] FastAPI CRUD backed by a database
-- [ ] Simple AI tool in Streamlit (→ track 09)
+Checklist: [Phase 14 — Python, Data, FastAPI & Streamlit](../course-roadmap/phase-14-python-data-fastapi.md)
 
 ## Work
 - [01-python-basics](01-python-basics/) — Python & data science notebook

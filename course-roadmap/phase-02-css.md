@@ -1,6 +1,6 @@
 # PHASE 2 — CSS, Bootstrap, Tailwind CSS & Design
 
-## CSS
+## 2.1 CSS
 
 ### Fundamentals
 
@@ -65,7 +65,7 @@
 
 ---
 
-## Bootstrap
+## 2.2 Bootstrap
 
 * [ ] Bootstrap installation & configuration
 * [ ] Containers, rows, columns & grid
@@ -88,7 +88,7 @@
 
 ---
 
-## Tailwind CSS
+## 2.3 Tailwind CSS
 
 ### Fundamentals
 

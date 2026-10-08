@@ -1,6 +1,6 @@
 # PHASE 1 — Web Structure
 
-## HTML
+## 1.1 HTML
 
 ### HTML Fundamentals
 

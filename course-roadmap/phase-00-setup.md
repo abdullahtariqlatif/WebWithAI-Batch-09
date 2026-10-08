@@ -1,6 +1,6 @@
 # PHASE 0 — Setup & Baseline
 
-## Development Environment
+## 0.1 Development Environment
 
 * [ ] GitHub Account Creation
 * [ ] Git Installation & Configuration
@@ -24,7 +24,7 @@
 * [ ] Docker Installation & Configuration
 * [ ] Docker Compose Installation & Configuration
 
-## Git
+## 0.2 Git
 
 * [ ] Git & Hosted Git
 * [ ] `git init`, `git clone`, `git status`, `.gitignore`

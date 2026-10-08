@@ -1,446 +1,149 @@
 # PHASE 4 — React
 
-## React Fundamentals
+HTTP & `fetch` basics → Phase 3. TypeScript with React → Phase 5. Wiring React to your own Express API → Phase 10.
 
-* [ ] React project setup
-* [ ] Vite & React project structure
-* [ ] Components & component trees
-* [ ] JSX
-* [ ] Props
-* [ ] `children`
-* [ ] Component composition
-* [ ] Conditional rendering
-* [ ] Rendering lists
-* [ ] Keys
-* [ ] Event handling
-* [ ] Forms
-* [ ] Fragments
-* [ ] Importing & exporting components
+## 4.1 Fundamentals
 
-## Components & Composition
+* [ ] Setup: Vite, project structure, importing & exporting components
+* [ ] JSX, components, component trees & fragments
+* [ ] Props & `children`
+* [ ] Conditional rendering, rendering lists & keys
+* [ ] Event handling & basic forms
 
-* [ ] Functional components
-* [ ] Component responsibilities
-* [ ] Presentational & container patterns
-* [ ] Component composition
-* [ ] Reusable components
-* [ ] Props composition
-* [ ] Render props
-* [ ] Compound components
-* [ ] Controlled & uncontrolled components
+## 4.2 Components & Composition
+
+* [ ] Functional components, component responsibilities & boundaries (separation of concerns)
+* [ ] Reusable components & props composition
+* [ ] Patterns: presentational/container, render props, compound components, higher-order components, headless components
+* [ ] Controlled vs uncontrolled components
 * [ ] Avoiding prop drilling
-* [ ] Component boundaries & separation of concerns
 
-## State
+## 4.3 State
 
-* [ ] `useState`
-* [ ] State initialization & updates
-* [ ] Functional state updates
-* [ ] State immutability
-* [ ] Updating objects & arrays in state
-* [ ] Derived state
-* [ ] Lifting state up
-* [ ] Local vs shared state
-* [ ] State colocation
-* [ ] Controlled & uncontrolled state
-* [ ] `useReducer`
-* [ ] Reducer patterns
-* [ ] State machines & state modeling basics
+* [ ] `useState`: initialization, updates & functional updates
+* [ ] Immutability: updating objects & arrays in state
+* [ ] Derived state, lifting state up, local vs shared state & state colocation
+* [ ] `useReducer`, reducer patterns & state-machine basics
 
-## Hooks
+## 4.4 Hooks & Effects
 
 * [ ] Rules of Hooks
-* [ ] `useState`
-* [ ] `useEffect`
-* [ ] `useContext`
-* [ ] `useReducer`
-* [ ] `useRef`
-* [ ] `useMemo`
-* [ ] `useCallback`
-* [ ] `useId`
-* [ ] `useLayoutEffect`
-* [ ] `useImperativeHandle`
-* [ ] `useDebugValue`
-* [ ] Custom hooks
-* [ ] Hook composition
+* [ ] `useEffect`, `useContext`, `useRef`, `useMemo`, `useCallback`, `useId`, `useLayoutEffect`, `useImperativeHandle` & `useDebugValue`
+* [ ] Custom hooks & hook composition
+* [ ] Effects: lifecycle & synchronization, dependency arrays & cleanup
+* [ ] Effect uses: API requests, subscriptions, timers, event listeners & external systems
+* [ ] When *not* to use an effect; stale closures & effect dependencies
 
-## Effects
+## 4.5 Context, Refs & the DOM
 
-* [ ] Effect lifecycle & synchronization
-* [ ] Dependency arrays
-* [ ] Cleanup functions
-* [ ] API requests
-* [ ] Subscriptions
-* [ ] Timers
-* [ ] Event listeners
-* [ ] Synchronizing with external systems
-* [ ] Avoiding unnecessary effects
-* [ ] Understanding when an effect should not be used
-* [ ] Effect dependencies & stale closures
+* [ ] Context: `createContext`, providers, consumers, `useContext` & context composition
+* [ ] Context for app config & auth/user state; context performance; not using Context for every kind of state
+* [ ] Refs: DOM refs, mutable refs, forwarding refs, `useImperativeHandle` & imperative APIs
+* [ ] Measuring DOM elements, focus management & portals
 
-## Context API
+## 4.6 Routing
 
-* [ ] `createContext`
-* [ ] Context providers
-* [ ] `useContext`
-* [ ] Context consumers
-* [ ] Context composition
-* [ ] Context for application-wide configuration
-* [ ] Context for authentication & user state
-* [ ] Context performance considerations
-* [ ] Avoiding using Context as a replacement for every type of state management
+* [ ] React Router: `BrowserRouter`, route configuration, `Route`, `Link` & `NavLink`
+* [ ] Nested & dynamic routes, route params & query/search params
+* [ ] Programmatic navigation, route layouts & 404/catch-all routes
+* [ ] Protected routes; authentication- & authorization-aware routing
+* [ ] Route-level loading & error states; URL state & navigation patterns
 
-## Refs & DOM
+## 4.7 Data Fetching & Server State
 
-* [ ] `useRef`
-* [ ] DOM references
-* [ ] Mutable refs
-* [ ] Forwarding refs
-* [ ] `useImperativeHandle`
-* [ ] Imperative APIs
-* [ ] Measuring DOM elements
-* [ ] Focus management
-
-## Routing
-
-* [ ] React Router
-* [ ] `BrowserRouter`
-* [ ] Routes & route configuration
-* [ ] `Route`
-* [ ] `Link`
-* [ ] `NavLink`
-* [ ] Nested routes
-* [ ] Dynamic routes
-* [ ] Route parameters
-* [ ] Query/search parameters
-* [ ] Programmatic navigation
-* [ ] Route layouts
-* [ ] Protected routes
-* [ ] Authentication-aware routing
-* [ ] Authorization-aware routing
-* [ ] 404 / catch-all routes
-* [ ] Route-level loading & error states
-* [ ] URL state & navigation patterns
-
-## API Integration
-
-* [ ] HTTP & REST API concepts
-* [ ] `fetch`
-* [ ] Axios
-* [ ] GET, POST, PUT, PATCH & DELETE
-* [ ] Request headers
-* [ ] JSON request & response handling
-* [ ] Authentication headers
-* [ ] Cookies & credentials
-* [ ] CORS
-* [ ] Loading states
-* [ ] Error states
-* [ ] Empty states
-* [ ] Retry handling
-* [ ] Request cancellation
-* [ ] Pagination
-* [ ] Filtering & sorting
-* [ ] Debounced search
+* [ ] `fetch` vs Axios: methods, headers, JSON, auth headers, cookies & credentials
+* [ ] API service layer & API error handling
+* [ ] Loading, error & empty states; retries & request cancellation
+* [ ] Pagination, filtering, sorting & debounced search
 * [ ] Optimistic UI
-* [ ] API service layer
-* [ ] API error handling
+* [ ] Client state vs server state & the server-state lifecycle
+* [ ] TanStack Query: queries, mutations, query keys, caching, cache invalidation, refetching & stale data
+* [ ] TanStack Query advanced: pagination & infinite queries, optimistic updates, prefetching, dependent queries & request deduplication
 
-## Server State & Data Fetching
+## 4.8 Forms
 
-* [ ] Client state vs server state
-* [ ] Server state lifecycle
-* [ ] TanStack Query / React Query
-* [ ] Queries
-* [ ] Mutations
-* [ ] Query keys
-* [ ] Caching
-* [ ] Cache invalidation
-* [ ] Refetching
-* [ ] Stale data
-* [ ] Pagination & infinite queries
-* [ ] Optimistic updates
-* [ ] Prefetching
-* [ ] Dependent queries
-* [ ] Request deduplication
-* [ ] Error & loading states
+* [ ] Controlled vs uncontrolled forms, form state, submission & error handling
+* [ ] Validation: client-side, showing server-side errors & schema validation with Zod
+* [ ] React Hook Form & reusable form components
+* [ ] File inputs, multi-step forms & dynamic forms
 
-## Forms
+## 4.9 Global State
 
-* [ ] Controlled forms
-* [ ] Uncontrolled forms
-* [ ] Form state
-* [ ] Form validation
-* [ ] Client-side validation
-* [ ] Server-side validation errors
-* [ ] Reusable form components
-* [ ] React Hook Form
-* [ ] Schema validation
-* [ ] Zod
-* [ ] Form submission & error handling
-* [ ] File uploads
-* [ ] Multi-step forms
-* [ ] Dynamic forms
-
-## Authentication
-
-* [ ] Authentication vs authorization
-* [ ] Login & logout flows
-* [ ] Registration
-* [ ] Session-based authentication
-* [ ] Token-based authentication
-* [ ] JWT basics
-* [ ] HTTP-only cookies
-* [ ] Access & refresh tokens
-* [ ] CSRF basics
-* [ ] CORS & credentials
-* [ ] Persisting authentication state
-* [ ] Current-user / session endpoint
-* [ ] Protected routes
-* [ ] Role-based access control
-* [ ] Permission-based UI
-* [ ] Authentication with a Rails API
-
-## Redux & Redux Toolkit
-
-* [ ] Redux concepts
-* [ ] Store
-* [ ] State
-* [ ] Actions
-* [ ] Reducers
-* [ ] Selectors
-* [ ] Dispatch
-* [ ] Middleware
-* [ ] Redux Toolkit
-* [ ] `configureStore`
-* [ ] `createSlice`
-* [ ] `createAsyncThunk`
-* [ ] Async state management
-* [ ] Redux middleware
-* [ ] Redux DevTools
-* [ ] Normalized state
-* [ ] Global state architecture
-* [ ] When to use Redux vs Context vs local state
-* [ ] RTK Query
-* [ ] Redux Toolkit Query caching & mutations
-
-## Other State Management
-
-* [ ] Local component state
-* [ ] Context API
-* [ ] Redux Toolkit
+* [ ] Redux concepts: store, state, actions, reducers, selectors, dispatch & middleware
+* [ ] Redux Toolkit: `configureStore`, `createSlice`, `createAsyncThunk` & async state
+* [ ] Redux DevTools, normalized state & global state architecture
+* [ ] RTK Query: caching & mutations
 * [ ] Zustand
-* [ ] URL state
-* [ ] Server state
-* [ ] Choosing the appropriate state-management strategy
-* [ ] Avoiding unnecessary global state
+* [ ] Choosing between local state, Context, Redux, Zustand, URL state & server state; avoiding unnecessary global state
 
-## React Architecture
+## 4.10 Authentication UI
 
-* [ ] Component-based architecture
-* [ ] Feature-based folder structure
-* [ ] Components
-* [ ] Pages
-* [ ] Layouts
-* [ ] Hooks
-* [ ] Services
-* [ ] API layer
-* [ ] State management
-* [ ] Utility functions
-* [ ] Constants
-* [ ] Configuration
-* [ ] Types
-* [ ] Shared UI components
-* [ ] Feature modules
-* [ ] Separation of UI, state & API logic
-* [ ] Dependency boundaries
-* [ ] Scalable project structure
+* [ ] Login, logout & registration flows; current-user/session request
+* [ ] Persisting auth state & protected routes
+* [ ] Role-based & permission-based UI
 
-## TypeScript with React
+Sessions vs tokens, JWT, refresh tokens, cookies & CSRF → Phase 8.5. Connecting to Express → Phase 10.4.
 
-* [ ] TypeScript fundamentals for React
-* [ ] Component props
-* [ ] `children` types
-* [ ] Event types
-* [ ] State types
-* [ ] `useState` & `useReducer` typing
-* [ ] Custom hook types
-* [ ] API response types
-* [ ] Generic components
-* [ ] Utility types
-* [ ] Type-safe forms
-* [ ] Type-safe API clients
-* [ ] Discriminated unions
-* [ ] Avoiding excessive `any`
+## 4.11 Architecture
 
-## Performance
+* [ ] Component-based & feature-based folder structure; feature modules
+* [ ] Folders: components, pages, layouts, hooks, services/API layer, state, utils, constants, config, types & shared UI
+* [ ] Separating UI, state & API logic; dependency boundaries; scalable project structure
 
-* [ ] React rendering model
-* [ ] Re-renders
-* [ ] Referential equality
-* [ ] `React.memo`
-* [ ] `useMemo`
-* [ ] `useCallback`
-* [ ] Memoization trade-offs
-* [ ] Avoiding unnecessary re-renders
-* [ ] Component boundaries & state placement
-* [ ] React DevTools Profiler
-* [ ] Code splitting
-* [ ] Lazy loading
-* [ ] `Suspense`
-* [ ] Route-level code splitting
-* [ ] Bundle analysis
-* [ ] Image & asset optimization
-* [ ] Virtualized lists
-* [ ] Debouncing & throttling
+## 4.12 Performance & Modern React
 
-## Modern React & Concurrent Features
-
-* [ ] Rendering & reconciliation
-* [ ] Concurrent rendering concepts
-* [ ] Transitions
-* [ ] `useTransition`
-* [ ] `useDeferredValue`
-* [ ] Suspense
-* [ ] Lazy loading
-* [ ] Streaming concepts
-* [ ] `useOptimistic`
-* [ ] `useActionState`
-* [ ] Actions & form actions
-* [ ] `useFormStatus`
-* [ ] React 19 concepts
-* [ ] Understanding when concurrent features are useful
-
-## Advanced React
-
-* [ ] Custom hooks & reusable logic
-* [ ] Compound components
-* [ ] Render props
-* [ ] Higher-order components
-* [ ] Error boundaries
-* [ ] Portals
-* [ ] Refs & imperative APIs
-* [ ] Suspense boundaries
+* [ ] Rendering model, reconciliation, re-renders & referential equality
+* [ ] `React.memo`, `useMemo` & `useCallback`; memoization trade-offs; state placement to avoid re-renders
+* [ ] Code splitting & lazy loading (incl. route-level), `Suspense` & Suspense boundaries
+* [ ] Bundle analysis, image/asset optimization, virtualized lists, debouncing & throttling
+* [ ] Concurrent features: transitions, `useTransition`, `useDeferredValue` & streaming concepts, and when they're useful
+* [ ] React 19: actions & form actions, `useActionState`, `useFormStatus` & `useOptimistic`
+* [ ] Component identity: keys & state preservation, state reset patterns
 * [ ] Error boundaries & recovery
-* [ ] Reconciliation
-* [ ] Component identity
-* [ ] Keys & state preservation
-* [ ] State reset patterns
-* [ ] Advanced composition patterns
-* [ ] Headless component patterns
-* [ ] Accessibility-aware component design
 
-## React Server Concepts
+## 4.13 Server-Side React & Next.js
 
-* [ ] Client components vs server components
-* [ ] React Server Components concepts
-* [ ] Server/client boundaries
-* [ ] Serialization boundaries
-* [ ] Server actions concepts
-* [ ] Framework-based React architecture
-* [ ] Next.js fundamentals
-* [ ] When to use plain React/Vite vs Next.js
-* [ ] SSR, CSR & SSG concepts
-* [ ] Hydration
-* [ ] Streaming & server rendering concepts
+* [ ] Client vs server components, React Server Components, server/client & serialization boundaries, server actions
+* [ ] CSR, SSR & SSG, hydration & streaming server rendering
+* [ ] Next.js fundamentals & framework-based architecture; plain React/Vite vs Next.js
 
-## Accessibility
+## 4.14 Accessibility
 
-* [ ] Semantic HTML in React
-* [ ] Accessible forms
-* [ ] Labels & descriptions
-* [ ] Keyboard navigation
-* [ ] Focus management
-* [ ] ARIA basics
-* [ ] Accessible dialogs & modals
-* [ ] Accessible navigation
-* [ ] Screen-reader considerations
+* [ ] Semantic HTML, accessible forms, labels & descriptions
+* [ ] Keyboard navigation, focus management & ARIA basics
+* [ ] Accessible dialogs/modals & navigation; screen-reader considerations; accessibility-aware component design
 * [ ] Accessibility testing
 
-## Testing React Applications
+## 4.15 Testing & Debugging
 
-* [ ] Unit testing concepts
-* [ ] Component testing
-* [ ] Integration testing
-* [ ] Vitest
-* [ ] React Testing Library
-* [ ] Testing user interactions
-* [ ] Testing forms
-* [ ] Testing asynchronous UI
-* [ ] Mocking API requests
-* [ ] MSW
-* [ ] End-to-end testing
-* [ ] Playwright
-* [ ] Cypress
-* [ ] Testing authentication flows
+* [ ] Unit, component & integration testing concepts; Vitest + React Testing Library
+* [ ] Testing user interactions, forms, async UI, loading/error states & auth state
+* [ ] Mocking API requests with MSW
+* [ ] End-to-end testing with Playwright or Cypress; testing auth flows
+* [ ] React DevTools: component, props & state inspection; Profiler; debugging unnecessary renders
+* [ ] Browser DevTools: network & console debugging, source maps & debugging async code
 
-## Debugging & Developer Tools
+## 4.16 Production React
 
-* [ ] React DevTools
-* [ ] Component inspection
-* [ ] Props & state inspection
-* [ ] Profiler
-* [ ] Browser DevTools
-* [ ] Network debugging
-* [ ] Console debugging
-* [ ] Source maps
-* [ ] Debugging asynchronous code
-* [ ] Debugging unnecessary renders
+* [ ] Environment variables, per-environment API config, dev vs production config
+* [ ] Build process, production builds, bundle optimization & source maps
+* [ ] Error monitoring & logging
+* [ ] Static hosting & CDN basics (deploying → Phase 12); security basics & dependency management
 
-## Production React
+## 4.17 React + Rails API
 
-* [ ] Environment variables
-* [ ] Development vs production configuration
-* [ ] Build process
-* [ ] Production builds
-* [ ] Bundle optimization
-* [ ] Code splitting
-* [ ] Error monitoring
-* [ ] Logging
-* [ ] Source maps
-* [ ] Deployment
-* [ ] Static hosting
-* [ ] CDN basics
-* [ ] Environment-specific API configuration
-* [ ] Security basics
-* [ ] Dependency management
-
-## React + Rails API
-
-* [ ] React frontend with Rails API backend
-* [ ] Rails API-only applications
-* [ ] REST API integration
-* [ ] CORS configuration
-* [ ] Cookie-based authentication
-* [ ] Token-based authentication
-* [ ] CSRF considerations
-* [ ] Rails validation errors in React
-* [ ] Rails pagination in React
-* [ ] Rails serializers / JSON responses
-* [ ] Active Storage file uploads
-* [ ] Direct uploads from React
-* [ ] Rails Action Cable integration
-* [ ] WebSocket concepts
-* [ ] React frontend + Rails backend architecture
-* [ ] Deploying React and Rails separately
-* [ ] API versioning
-* [ ] Error handling between frontend & backend
+* [ ] Rails API-only app + React frontend architecture; REST integration & API versioning
+* [ ] CORS, cookie-based vs token-based auth & CSRF with Rails
+* [ ] Rails serializers/JSON responses, validation errors & pagination in React; error handling between the two
+* [ ] Active Storage & direct uploads from React
+* [ ] Action Cable & WebSocket concepts
+* [ ] Deploying React & Rails separately
 
 ## Practice
 
-* [ ] Build a Todo application
-* [ ] Build an authentication UI
-* [ ] Build an admin dashboard
-* [ ] Build a CRUD application
-* [ ] Build a search & filtering application
-* [ ] Build an API dashboard
-* [ ] Build a multi-page application
-* [ ] Build a protected dashboard
-* [ ] Build a Redux application
-* [ ] Build a React Hook Form application
-* [ ] Build a TanStack Query application
-* [ ] Build a TypeScript React application
-* [ ] Build a role-based admin dashboard
-* [ ] Build a React frontend for a Rails API
-* [ ] Build a production-style full-stack application
-
----
+* [ ] Todo app, grown into a CRUD app with search & filtering (4.1–4.7)
+* [ ] Multi-page app with auth UI and a protected, role-based admin dashboard (4.6, 4.10)
+* [ ] API dashboard using TanStack Query (4.7)
+* [ ] Forms app with React Hook Form + Zod (4.8)
+* [ ] Redux Toolkit application (4.9)
+* [ ] React frontend for a Rails API (4.17)

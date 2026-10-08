@@ -1,6 +1,6 @@
 # PHASE 3 — JavaScript
 
-## Browser DevTools
+## 3.1 Browser DevTools
 
 * [ ] Browser DevTools overview
 * [ ] Console & JavaScript debugging
@@ -10,12 +10,12 @@
 * [ ] Application/Storage: `localStorage`, `sessionStorage` & cookies
 * [ ] Inspecting errors, requests & responses
 
-## Core Syntax
+## 3.2 Core Syntax
 
 * [ ] Variables: `let`, `const`
 * [ ] Data types: strings, numbers, booleans, `null`, `undefined`, objects & arrays
 
-## Operators
+## 3.3 Operators
 
 * [ ] Arithmetic, comparison & logical operators
 * [ ] Equality & strict equality: `==`, `===`, `!=`, `!==`
@@ -23,25 +23,25 @@
 * [ ] Nullish coalescing: `??`
 * [ ] Optional chaining: `?.`
 
-## Control Flow
+## 3.4 Control Flow
 
 * [ ] `if`, `else`, `else if` & `switch`
 * [ ] Loops: `for`, `while`, `do...while`, `for...of` & `for...in`
 
-## Functions
+## 3.5 Functions
 
 * [ ] Function declarations, function expressions & arrow functions
 * [ ] Parameters, default parameters & return values
 * [ ] Callbacks & higher-order functions
 
-## Arrays
+## 3.6 Arrays
 
 * [ ] Array creation, indexing & mutation
 * [ ] `map`, `filter` & `reduce`
 * [ ] `find`, `findIndex`, `some` & `every`
 * [ ] `includes`, `sort`, `slice` & `splice`
 
-## Objects
+## 3.7 Objects
 
 * [ ] Object literals & nested objects
 * [ ] Property access & computed properties
@@ -50,7 +50,7 @@
 * [ ] Object methods
 * [ ] `Object.keys`, `Object.values` & `Object.entries`
 
-## Modern JavaScript
+## 3.8 Modern JavaScript
 
 * [ ] Template literals
 * [ ] Modules: imports & exports
@@ -58,14 +58,14 @@
 * [ ] ES modules
 * [ ] CommonJS & `require`
 
-## Error Handling
+## 3.9 Error Handling
 
 * [ ] `throw` & `Error`
 * [ ] Custom errors
 * [ ] `try/catch/finally`
 * [ ] Error handling in asynchronous code
 
-## Asynchronous JavaScript
+## 3.10 Asynchronous JavaScript
 
 * [ ] Callbacks & asynchronous execution
 * [ ] Promises
@@ -74,7 +74,7 @@
 * [ ] `try/catch` with asynchronous code
 * [ ] `Promise.all`, `Promise.allSettled` & `Promise.race`
 
-## Browser JavaScript
+## 3.11 Browser JavaScript
 
 * [ ] DOM manipulation
 * [ ] Events & event listeners
@@ -83,7 +83,7 @@
 * [ ] `localStorage` & `sessionStorage`
 * [ ] Cookies basics
 
-## API Basics
+## 3.12 API Basics
 
 ### HTTP Fundamentals
 
@@ -110,7 +110,7 @@
 * [ ] Async API requests with `async/await`
 * [ ] Request cancellation with `AbortController`
 
-## Environment & Configuration
+## 3.13 Environment & Configuration
 
 * [ ] Environment variables
 * [ ] `.env` & `.env.example`
@@ -119,7 +119,7 @@
 * [ ] Keeping secrets out of source code
 * [ ] Client-side environment variables & public configuration
 
-## JavaScript Concepts Worth Drilling
+## 3.14 JavaScript Concepts Worth Drilling
 
 * [ ] Scope & lexical scope
 * [ ] Closures
@@ -131,6 +131,13 @@
 * [ ] Event loop
 * [ ] Call stack
 * [ ] Microtasks & macrotasks
+
+## 3.15 Data Structures & Algorithms
+
+* [ ] Big-O & analyzing algorithm complexity
+* [ ] Arrays, objects/maps, sets, stacks & queues in JavaScript
+* [ ] Searching & sorting algorithms
+* [ ] Data-structure manipulation & optimization
 
 ## Practice
 

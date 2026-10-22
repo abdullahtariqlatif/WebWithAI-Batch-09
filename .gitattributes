@@ -1,0 +1,8 @@
+# The dataset folder under 08-python-data contains data files, not source code.
+# One file in there ("Heterogeneous_Data .jl") is a JSON Lines export from a
+# scraping exercise - the ".jl" extension collides with Julia's real extension,
+# which made GitHub's language detector attribute 27MB to "Julia" even though
+# no Julia code exists in this repo. Marking it (and any future .jl data dumps
+# in this folder) as vendored excludes it from language stats.
+08-python-data/02-data-analysis/DataSets/** linguist-vendored
+*.jl linguist-vendored

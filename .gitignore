@@ -28,3 +28,7 @@ build/
 .idea/
 .qodo/
 *.log
+
+# Local SQLite databases (recreated from seed data on startup)
+*.db
+chroma_db/
